@@ -52,7 +52,8 @@ const Menu: React.FC = () => {
 const MenuItem: React.FC<MenuItemProps> = ({ svg, text, active }) => {
 return ( 
     <Flex position="relative" gap="8px" w="100%" height="36px" pl="60px" alignItems="center" opacity={active ? 1 : 0.5} _hover={{
-    }}>
+        opacity: 1,
+    }} cursor="pointer" transition='0.2s backgroundColor, 0.2s opacity'>
         <Image src={svg} alt={text} boxSize="24px"></Image>
         <Text fontWeight={500} fontSize={14} lineHeight="21px"color='#000'>{text}</Text>
         {active && <Flex position="absolute" left="-10px" height="36px" width="19px" borderRadius="16px" backgroundColor="#E5D405"></Flex>}
