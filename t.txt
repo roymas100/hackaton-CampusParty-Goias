@@ -1,0 +1,49 @@
+export interface ISchool {
+    id: number,
+    name : string,
+    description : string
+    location : string
+    metrics : {
+        darkWeb : {
+            amount : number
+            sites : string[]
+        }
+        violence : {
+            professorAndStudent : number
+            studentAndStudent : number
+        },
+        ouvidoria : {
+            amount : number
+            manifestacao : {
+                id : string
+                name : string
+                type : "Saúde Mendal" | "Violência na Escola" | "Ameaça"
+                
+            }[]
+        }
+    }
+}export interface ISchool {
+    id: 1,
+    name : string,
+    description : string
+    location : string
+    metrics : {
+        darkWeb : {
+            amount : 3
+            sites : ["dogolachan.br","5chan.net.jp","siegNet.com.rus"]
+        }
+        violence : {
+            professorAndStudent : 4
+            studentAndStudent : 14
+        },
+        ouvidoria : {
+            amount : number
+            manifestacao : {
+                id : 1
+                name : "Situação legal na minha escola"
+                type : "Elogio"
+                
+            }[]
+        }
+    }
+}
