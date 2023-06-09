@@ -26,9 +26,7 @@ const menuItems: MenuItemProps[] = [{
 {
     text: 'Preferências',
     svg: './Gear.svg'
-}
-
-]
+}]
 
 const Menu: React.FC = () => {
   return (
