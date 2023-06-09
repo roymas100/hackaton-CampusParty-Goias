@@ -2,6 +2,7 @@ import Head from 'next/head'
 import { Poppins } from 'next/font/google'
 import { Flex } from '@chakra-ui/react'
 import Menu from '@/components/Menu'
+import Map from '@/components/Map'
 
 // const poppins = Poppins({weight: '400'})
 
@@ -16,6 +17,7 @@ export default function Home() {
       </Head>
       <Flex>
         <Menu />
+        <Map />
       </Flex>
     </>
   )
