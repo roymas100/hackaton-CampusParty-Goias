@@ -1,13 +1,45 @@
 import Head from 'next/head'
-import { Flex } from '@chakra-ui/react'
+import { Flex, Text } from '@chakra-ui/react'
 import Menu from '@/components/Menu'
-import { useCallback } from 'react'
 import dynamic from 'next/dynamic'
+import Card from '@/components/Card';
+import ProgressBar from '@/components/ProgressBar';
+import { useStyles } from '@/context/StylesContext';
+import { CircleProgressBar, CircleProgressBarContainer } from '@/components/CircleProgressBar';
+import CircleChartGroup from '@/components/CircleChartGroup';
 
 const Map = dynamic(() => import('@/components/Map'), { ssr: false });
 
+const data = [{
+  label: "Goiania",
+  value: 20,
+  color: '#C1E505'
+},
+{
+  label: "Salvador",
+  value: 40,
+  color: '#C1E505'
+},
+{
+  label: "Rio de Janeiro",
+  value: 80,
+  color: '#C1E505'
+},
+{
+  label: "Goiania",
+  value: 10,
+  color: '#C1E505'
+},
+{
+  label: "Goiania",
+  value: 60,
+  color: '#C1E505'
+}]
+
 export default function Home() {
-  return (
+  const { theme } = useStyles()
+
+return (
     <>
       <Head>
         <title>Escola Segura</title>
@@ -17,7 +49,23 @@ export default function Home() {
       </Head>
       <Flex>
         <Menu />
-        <Map />
+
+        <Flex padding="24px" background={theme.background} w="calc(100vw - 285px)" justifyContent="flex-start" alignItems="flex-start" flexWrap="wrap" gap="16px" >
+        <Card title='Incidência de violência entre alunos' footer='Baseado no número de alertas registrados pelas escolas usuárias do Escola Segura da região. É de extrema importância a mobilização de material de conscientização.'>
+            <CircleChartGroup data={data} />
+          </Card>
+          
+          <Card title='Scanner de palavras na DarkWeb'>
+            <Flex gap="8px" flexDir="column">
+              <ProgressBar label='Colégio Yes Profissional' percent={40}/>
+              <ProgressBar label='Colégio Estadual Jardim Europa' percent={40}/>
+              <ProgressBar label='Escola Estadual Professora Marinete Silva' percent={40}/>
+              <ProgressBar label='Colégio Estadual Pré-Universitário' percent={40}/>
+            </Flex>
+          </Card>
+
+         
+        </Flex>
       </Flex>
     </>
   )
