@@ -345,7 +345,7 @@ return (
       <Flex>
         <Menu />
 
-        <Flex padding="24px" background={theme.background} w="calc(100vw - 285px)" justifyContent="flex-start" alignItems="flex-start" flexWrap="wrap" gap="16px" >
+        <Flex padding="24px" pl="309px" background={theme.background} w="100%" justifyContent="flex-start" alignItems="flex-start" flexWrap="wrap" gap="16px" >
           {/* <Filter /> */}
 
           <Card title='Incidência de violência entre alunos' footer='Baseado no número de alertas registrados pelas escolas usuárias do Escola Segura da região. É de extrema importância a mobilização de material de conscientização.'>
@@ -354,11 +354,16 @@ return (
           
           <Card title='Scanner de palavras na DarkWeb'>
             <Flex gap="8px" flexDir="column">
-              {schools.splice(0,5).map(item => {return (
+              {schools.slice(0,5).map(item => {return (
                 <ProgressBar key={item.id} label={item.name} percent={(item.metrics.darkWeb.amount * 10) }/>
               )})}
             </Flex>
           </Card>
+
+          <Flex w="100%" height="448px">
+            
+          <Map />
+             </Flex>
 
          
         </Flex>

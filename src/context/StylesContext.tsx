@@ -6,6 +6,7 @@ import dark from "@/styles/dark";
 
 type StylesContextType = {
     theme: ITheme,
+    isDarkMode: boolean,
     setColorMode: Dispatch<SetStateAction<IColorMode>>
   };
   
@@ -27,9 +28,15 @@ export function StylesContextProvider(props: StylesContextProviderProps) {
 
     }, [colorMode])
 
+    const isDarkMode = useMemo(() => {
+      return colorMode === "DARK"
+  }, [colorMode])
+    
+
   return (
     <StylesContext.Provider
       value={{
+        isDarkMode,
         theme,
         setColorMode
       }}
