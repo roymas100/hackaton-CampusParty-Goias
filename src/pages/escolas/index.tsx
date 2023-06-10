@@ -1,15 +1,18 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import { Flex, Heading } from '@chakra-ui/react';
 import Head from 'next/head';
 import React from 'react';
 import { useStyles } from '@/context/StylesContext';
 import Menu from '@/components/Menu';
 import SchoolCard from '@/components/SchoolCard';
+import { useRouter } from 'next/router';
 
 // import { Container } from './styles';
 
-const escolas: React.FC = () => {
-    // eslint-disable-next-line react-hooks/rules-of-hooks
+const Escolas: React.FC = () => {
     const { theme } = useStyles()
+    const { push } = useRouter()
+
 
 
   return <>
@@ -24,10 +27,10 @@ const escolas: React.FC = () => {
         <Menu />
 
         <Flex padding="24px" pl="309px" background={theme.background} w="100%" justifyContent="flex-start" alignItems="flex-start" flexWrap="wrap" gap="16px" >
-            <Heading>Escolas próximas a ganharem o selo</Heading>
+            <Heading color={theme.text.primary}>Escolas próximas a ganharem o selo</Heading>
 
             <Flex flexWrap="wrap" gap="16px">
-                <SchoolCard name='Ensino em Período Integral Iris Rezende Machado' />
+                <SchoolCard name='Ensino em Período Integral Iris Rezende Machado' onClick={() => push('/escolas/1')} />
                 <SchoolCard name='Ensino em Período Integral Iris Rezende Machado' />
                 <SchoolCard name='Ensino em Período Integral Iris Rezende Machado' />
                 <SchoolCard name='Ensino em Período Integral Iris Rezende Machado' />
@@ -41,4 +44,4 @@ const escolas: React.FC = () => {
       </>;
 }
 
-export default escolas;
+export default Escolas;
