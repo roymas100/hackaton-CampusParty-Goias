@@ -34,7 +34,7 @@ const Menu: React.FC = () => {
   const { theme, setColorMode } = useStyles()
 
   return (
-  <Flex w="285px" alignSelf="stretch" bgColor={theme.menu.background} flexDir='column' pt='42px' pb='42px' >
+  <Flex w="285px" alignSelf="stretch" bgColor={theme.menu.background} flexDir='column' pt='42px' pb='42px' position="fixed" left="0" top="0" bottom="0">
     <Flex gap="14px" alignItems='center' pl='32px'>
         <Avatar src='./avatar.svg' height="60px" w="60px" borderWidth="2px" borderStyle="solid" borderColor={theme.menu.select}/>
 

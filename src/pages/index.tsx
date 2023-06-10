@@ -51,8 +51,8 @@ return (
       <Flex>
         <Menu />
 
-        <Flex padding="24px" background={theme.background} w="calc(100vw - 285px)" justifyContent="flex-start" alignItems="flex-start" flexWrap="wrap" gap="16px" >
-          <Filter />
+        <Flex padding="24px" pl="309px" background={theme.background} w="100%" justifyContent="flex-start" alignItems="flex-start" flexWrap="wrap" gap="16px" >
+          <Filter schools={[]} selected={[]} />
 
           <Card title='Incidência de violência entre alunos' footer='Baseado no número de alertas registrados pelas escolas usuárias do Escola Segura da região. É de extrema importância a mobilização de material de conscientização.'>
             <CircleChartGroup data={data} />
@@ -66,6 +66,11 @@ return (
               <ProgressBar label='Colégio Estadual Pré-Universitário' percent={40}/>
             </Flex>
           </Card>
+
+          <Flex w="100%" height="448px">
+            
+          <Map />
+             </Flex>
 
          
         </Flex>
