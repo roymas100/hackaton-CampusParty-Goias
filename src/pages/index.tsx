@@ -349,6 +349,7 @@ export default function Home() {
           flexWrap="wrap"
           gap="16px"
           height={"130vh"}
+          minH="100vh"
         >
           <Filter schools={schoolList.map(item => item.name)} selected={schoolList.map(item => item.name)} />
 

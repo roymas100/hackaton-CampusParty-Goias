@@ -1,4 +1,4 @@
-import { Card, CardBody, CardHeader, Text } from '@chakra-ui/react';
+import { Card, CardBody, CardHeader, Image, Text } from '@chakra-ui/react';
 import React from 'react';
 import GoalBar from '../GoalBar';
 
@@ -6,12 +6,36 @@ import GoalBar from '../GoalBar';
 
 interface SchoolCardProps {
     name: string;
-    onClick?: React.MouseEventHandler<HTMLDivElement> | undefined
+    onClick?: React.MouseEventHandler<HTMLDivElement> | undefined;
+    progress: number;
 }
 
-const SchoolCard: React.FC<SchoolCardProps> = ({ name, onClick }) => {
-  return <Card onClick={onClick} width="322px" cursor="pointer" borderStyle="solid" borderWidth="2px" borderColor="gray"  _hover={{
-    borderColor: "#000"
+const SchoolCard: React.FC<SchoolCardProps> = ({ name, onClick, progress }) => {
+
+    if (progress === 100) {
+        return <Card onClick={onClick} width="322px" cursor="pointer" transition="0.2s transform" _hover={{
+            transform: "scale(1.04)"
+          }} >
+        <CardHeader height="94px" bg="gray" borderTopRadius="4px" justifyContent="flex-end" display="flex">
+        <Image
+    alt="LevelUp"
+    src="/levelup.svg"
+    borderRadius={100}
+    width="48px"
+    height="48px"
+  />
+        </CardHeader>
+        
+        <CardBody padding="24px" paddingBottom="36px" display="flex" flexDir="column" gap="24px">
+            <Text>
+                {name}
+            </Text>
+        </CardBody>
+          </Card>;
+    }
+
+  return <Card onClick={onClick} width="322px" cursor="pointer" transition="0.2s transform" _hover={{
+            transform: "scale(1.04)"
   }} >
 <CardHeader height="94px" bg="gray" borderTopRadius="4px" />
 
@@ -19,7 +43,7 @@ const SchoolCard: React.FC<SchoolCardProps> = ({ name, onClick }) => {
     <Text>
         {name}
     </Text>
-    <GoalBar value={10} />
+    <GoalBar value={progress} />
 </CardBody>
   </Card>;
 }

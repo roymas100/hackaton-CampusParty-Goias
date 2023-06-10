@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import { Flex, Heading } from '@chakra-ui/react';
+import { Button, Flex, Heading } from '@chakra-ui/react';
 import Head from 'next/head';
 import React from 'react';
 import { useStyles } from '@/context/StylesContext';
@@ -7,13 +7,13 @@ import Menu from '@/components/Menu';
 import SchoolCard from '@/components/SchoolCard';
 import { useRouter } from 'next/router';
 
+import { AddIcon } from '@chakra-ui/icons'
+
 // import { Container } from './styles';
 
 const Escolas: React.FC = () => {
-    const { theme } = useStyles()
-    const { push } = useRouter()
-
-
+    const { theme } = useStyles();
+    const { push } = useRouter();
 
   return <>
    <Head>
@@ -26,17 +26,23 @@ const Escolas: React.FC = () => {
       <Flex>
         <Menu />
 
-        <Flex padding="24px" pl="309px" background={theme.background} w="100%" justifyContent="flex-start" alignItems="flex-start" flexWrap="wrap" gap="16px" >
-            <Heading color={theme.text.primary}>Escolas próximas a ganharem o selo</Heading>
+        <Flex padding="24px" pl="309px" minH="100vh" background={theme.background} w="100%" justifyContent="flex-start" alignItems="flex-start" flexWrap="wrap" gap="16px" >
+            <Flex justifyContent="space-between"mb="56px" flexWrap="wrap" gap='16px' width="100%">
+                <Heading color={theme.text.primary}>Escolas próximas a ganharem o selo</Heading>
+                <Button rightIcon={<AddIcon />} background={theme.menu.background} color={theme.text.primary} >
+                    Adicionar escola
+                </Button>
+                
+            </Flex>
 
             <Flex flexWrap="wrap" gap="16px">
-                <SchoolCard name='Ensino em Período Integral Iris Rezende Machado' onClick={() => push('/escolas/1')} />
-                <SchoolCard name='Ensino em Período Integral Iris Rezende Machado' />
-                <SchoolCard name='Ensino em Período Integral Iris Rezende Machado' />
-                <SchoolCard name='Ensino em Período Integral Iris Rezende Machado' />
-                <SchoolCard name='Ensino em Período Integral Iris Rezende Machado' />
-                <SchoolCard name='Ensino em Período Integral Iris Rezende Machado' />
-                <SchoolCard name='Ensino em Período Integral Iris Rezende Machado' />
+                <SchoolCard name='Ensino em Período Integral Iris Rezende Machado' progress={10} onClick={() => push('/escolas/1')} />
+                <SchoolCard name='Ensino em Período Integral Iris Rezende Machado' progress={100}  />
+                <SchoolCard name='Ensino em Período Integral Iris Rezende Machado'  progress={10} />
+                <SchoolCard name='Ensino em Período Integral Iris Rezende Machado'  progress={10} />
+                <SchoolCard name='Ensino em Período Integral Iris Rezende Machado' progress={10}  />
+                <SchoolCard name='Ensino em Período Integral Iris Rezende Machado' progress={10}  />
+                <SchoolCard name='Ensino em Período Integral Iris Rezende Machado'  progress={10} />
             </Flex>
         </Flex>
 
