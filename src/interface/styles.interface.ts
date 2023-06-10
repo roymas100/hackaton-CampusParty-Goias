@@ -10,6 +10,11 @@ export interface ITheme {
     primary: string,
     text: {
         primary: string
+    },
+    filter: {
+        background: string,
+        text: string,
+        button: string
     }
 }
 

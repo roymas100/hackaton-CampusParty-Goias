@@ -7,6 +7,7 @@ import ProgressBar from '@/components/ProgressBar';
 import { useStyles } from '@/context/StylesContext';
 import { CircleProgressBar, CircleProgressBarContainer } from '@/components/CircleProgressBar';
 import CircleChartGroup from '@/components/CircleChartGroup';
+import Filter from '@/components/Filter';
 
 const Map = dynamic(() => import('@/components/Map'), { ssr: false });
 
@@ -26,12 +27,12 @@ const data = [{
   color: '#C1E505'
 },
 {
-  label: "Goiania",
+  label: "Para",
   value: 10,
   color: '#C1E505'
 },
 {
-  label: "Goiania",
+  label: "Vitoria da Conquista",
   value: 60,
   color: '#C1E505'
 }]
@@ -51,7 +52,9 @@ return (
         <Menu />
 
         <Flex padding="24px" background={theme.background} w="calc(100vw - 285px)" justifyContent="flex-start" alignItems="flex-start" flexWrap="wrap" gap="16px" >
-        <Card title='Incidência de violência entre alunos' footer='Baseado no número de alertas registrados pelas escolas usuárias do Escola Segura da região. É de extrema importância a mobilização de material de conscientização.'>
+          <Filter />
+
+          <Card title='Incidência de violência entre alunos' footer='Baseado no número de alertas registrados pelas escolas usuárias do Escola Segura da região. É de extrema importância a mobilização de material de conscientização.'>
             <CircleChartGroup data={data} />
           </Card>
           
