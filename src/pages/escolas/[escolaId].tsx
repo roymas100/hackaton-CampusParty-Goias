@@ -22,7 +22,7 @@ const Game: React.FC = () => {
       <Flex>
         <Menu />
 
-        <Flex padding="24px" pl="309px" background={theme.background} w="100%" justifyContent="flex-start" alignItems="flex-start" flexWrap="wrap" gap="16px" >
+        <Flex padding="24px" pl="309px" background={theme.background} minH="100vh" w="100%" justifyContent="flex-start" alignItems="flex-start" flexWrap="wrap" gap="16px" >
             
             <Card maxWidth="400px" width="100%" padding="24px"  bg={theme.card.background}>
                 <CardBody display="flex" flexDir="column" gap="48px">

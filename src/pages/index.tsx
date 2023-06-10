@@ -344,7 +344,7 @@ return (
       <Flex>
         <Menu />
 
-        <Flex padding="24px" pl="309px" background={theme.background} w="100%" justifyContent="flex-start" alignItems="flex-start" flexWrap="wrap" gap="16px" >
+        <Flex padding="24px" pl="309px" background={theme.background} w="100%" minH="100vh" justifyContent="flex-start" alignItems="flex-start" flexWrap="wrap" gap="16px" >
           {/* <Filter /> */}
 
           <Card title='Incidência de violência entre alunos' footer='Baseado no número de alertas registrados pelas escolas usuárias do Escola Segura da região. É de extrema importância a mobilização de material de conscientização.'>

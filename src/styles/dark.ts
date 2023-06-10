@@ -20,7 +20,7 @@ const dark: ITheme = {
     },
     goal: {
         primary: '#1A66F5',
-        secundary: '#404040',
+        secundary: '#606060',
         backgroundIcon: '#252525',
         icon: "#fff"
     }

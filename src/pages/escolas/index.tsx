@@ -26,7 +26,7 @@ const Escolas: React.FC = () => {
       <Flex>
         <Menu />
 
-        <Flex padding="24px" pl="309px" background={theme.background} w="100%" justifyContent="flex-start" alignItems="flex-start" flexWrap="wrap" gap="16px" >
+        <Flex padding="24px" pl="309px" minH="100vh" background={theme.background} w="100%" justifyContent="flex-start" alignItems="flex-start" flexWrap="wrap" gap="16px" >
             <Flex justifyContent="space-between"mb="56px" flexWrap="wrap" gap='16px' width="100%">
                 <Heading color={theme.text.primary}>Escolas próximas a ganharem o selo</Heading>
                 <Button rightIcon={<AddIcon />} background={theme.menu.background} color={theme.text.primary} >
