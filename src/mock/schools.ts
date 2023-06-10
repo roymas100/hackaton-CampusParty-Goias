@@ -1,4 +1,4 @@
-export const schools = [
+export const schools2  = [
     {
       "id": 1,
       "name": "Escola Estadual João de Barro",
