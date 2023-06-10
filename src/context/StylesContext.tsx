@@ -17,7 +17,7 @@ type StylesContextType = {
 export const StylesContext = createContext({} as StylesContextType);
 
 export function StylesContextProvider(props: StylesContextProviderProps) {
-    const [colorMode, setColorMode] = useState<IColorMode>("LIGHT")
+    const [colorMode, setColorMode] = useState<IColorMode>("DARK")
 
     const theme = useMemo(() => {
         if (colorMode === "DARK") {

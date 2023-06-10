@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { Flex, Text } from "@chakra-ui/react";
+import { Button, Flex, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Text, useDisclosure } from "@chakra-ui/react";
 import Menu from "@/components/Menu";
 import dynamic from "next/dynamic";
 import Card from "@/components/Card";
@@ -9,6 +9,7 @@ import CircleChartGroup from "@/components/CircleChartGroup";
 import Filter from "@/components/Filter";
 import { useDb } from "@/hook/useDb";
 import { CircleProgressBar } from "@/components/CircleProgressBar";
+import { useState } from "react";
 
 const Map = dynamic(() => import("@/components/Map"), { ssr: false });
 
@@ -326,8 +327,15 @@ const schools = [
 export default function Home() {
   const { theme } = useStyles();
   const { schoolList } = useDb();
+  useState(()=>{
+    setTimeout(()=>{
+      onOpen()
+    },3000)
+  })
+  const { isOpen, onOpen, onClose } = useDisclosure()
 
   return (
+
     <>
       <Head>
         <title>Escola Segura</title>
@@ -335,6 +343,25 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="./avatar.svg" />
       </Head>
+      
+      <Modal onClose={onClose} size={"xl"} isOpen={isOpen}>
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader>ALERTA DE EMERGENCIA!!!</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>
+            <Text fontSize={"4xl"}>
+              Possivel atentado na Escola Estadual Imperatriz Leopodina
+            </Text>
+            <Text>
+              Rua das Rosas 242 - Goiania
+            </Text>
+          </ModalBody>
+          <ModalFooter>
+            <Button onClick={onClose}>Close</Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
 
       <Flex>
         <Menu />
