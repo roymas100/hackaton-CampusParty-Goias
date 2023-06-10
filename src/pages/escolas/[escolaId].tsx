@@ -26,7 +26,7 @@ const Game: React.FC = () => {
             
             <Card width="100%" padding="24px"  bg={theme.card.background}>
                 <CardBody display="flex" flexDir="column" gap="48px">
-                    <Heading fontSize="24px" color={theme.text.primary}>Escola Estadual Professora Marinete Silva</Heading>
+                    <Heading fontSize="24px" color={theme.text.primary}>Escola Estadual João de Barro</Heading>
                     <GoalBar value={76} />
                 </CardBody>
             </Card>
