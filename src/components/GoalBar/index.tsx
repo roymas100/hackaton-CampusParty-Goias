@@ -28,7 +28,7 @@ const GoalBar: React.FC<GoalBarProps> = ({ value = 0 }) => {
   />
   <Flex
     position="absolute"
-    top="-20px"
+    top="-16px"
     left="25%"
     gap="1px"
     flexDir="column"
@@ -37,8 +37,8 @@ const GoalBar: React.FC<GoalBarProps> = ({ value = 0 }) => {
     <Image
       alt="logo"
       borderRadius={100}
-      width="54px"
-      height="54px"
+      width="48px"
+      height="48px"
       src="/logo.svg"
     />
     {/* <Text fontWeight={700} fontSize="16px" color={theme.goal.secundary}>
@@ -48,7 +48,7 @@ const GoalBar: React.FC<GoalBarProps> = ({ value = 0 }) => {
 
   <Flex
     position="absolute"
-    top="-20px"
+    top="-16px"
     left="60%"
     gap="1px"
     flexDir="column"
@@ -57,8 +57,8 @@ const GoalBar: React.FC<GoalBarProps> = ({ value = 0 }) => {
     <Image
       alt="logo"
       borderRadius={100}
-      width="54px"
-      height="54px"
+      width="48px"
+      height="48px"
       src="/logo.svg"
     />
     {/* <Text fontWeight={700} fontSize="16px" color={theme.goal.secundary}>
@@ -70,11 +70,11 @@ const GoalBar: React.FC<GoalBarProps> = ({ value = 0 }) => {
     alt="LevelUp"
     src="/levelup.svg"
     position="absolute"
-    top="-22px"
+    top="-18px"
     right={-2}
     borderRadius={100}
-    width="54px"
-    height="54px"
+    width="48px"
+    height="48px"
   />
 </Flex>
 }

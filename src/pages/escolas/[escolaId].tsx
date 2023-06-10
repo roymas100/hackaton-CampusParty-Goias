@@ -3,10 +3,9 @@ import GoalCard from '@/components/GoalCard';
 import Menu from '@/components/Menu';
 import { useStyles } from '@/context/StylesContext';
 import { goals } from '@/mock/goals';
-import { Avatar, Flex, Image, Progress, Card as ChakraCard,Text, CardBody, CheckboxIcon, Card, Heading } from '@chakra-ui/react';
+import { Flex, CardBody, Card, Heading } from '@chakra-ui/react';
 import Head from 'next/head';
 import React from 'react';
-// import { Container } from './styles';
 
 
 const Game: React.FC = () => {
@@ -27,13 +26,8 @@ const Game: React.FC = () => {
             
             <Card maxWidth="400px" width="100%" padding="24px"  bg={theme.card.background}>
                 <CardBody display="flex" flexDir="column" gap="48px">
-
                     <Heading fontSize="24px" color={theme.text.primary}>Escola Estadual Professora Marinete Silva</Heading>
-
-                {/* <Avatar /> */}
-
-                <GoalBar value={76} />
-
+                    <GoalBar value={76} />
                 </CardBody>
             </Card>
 
