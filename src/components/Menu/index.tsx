@@ -1,5 +1,5 @@
 import { useStyles } from '@/context/StylesContext';
-import { Avatar, Button, Flex, Text, Icon, Image } from '@chakra-ui/react';
+import { Avatar, Button, Flex, Text, Icon, Image, Switch } from '@chakra-ui/react';
 import React from 'react';
 import { ReactSVG } from 'react-svg'
 
@@ -34,7 +34,7 @@ const Menu: React.FC = () => {
   const { theme, setColorMode } = useStyles()
 
   return (
-  <Flex w="285px" h="100vh" bgColor={theme.menu.background} flexDir='column' pt='42px' pb='42px' >
+  <Flex w="285px" alignSelf="stretch" bgColor={theme.menu.background} flexDir='column' pt='42px' pb='42px' >
     <Flex gap="14px" alignItems='center' pl='32px'>
         <Avatar src='./avatar.svg' height="60px" w="60px" borderWidth="2px" borderStyle="solid" borderColor={theme.menu.select}/>
 
@@ -48,7 +48,7 @@ const Menu: React.FC = () => {
         {menuItems.map(item => <MenuItem key={item.text} svg={item.svg} text={item.text} active={item.text === 'Dashboard'}/>)}
     </Flex>
 
-    <Button onClick={() => setColorMode(state => state === 'DARK' ? 'LIGHT' : 'DARK')}>Toggle color mode</Button>
+    <Switch onChange={() => setColorMode(state => state === 'DARK' ? 'LIGHT' : 'DARK')}></Switch>
   </Flex>)
 }
 

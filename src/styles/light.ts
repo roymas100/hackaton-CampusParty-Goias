@@ -8,6 +8,11 @@ const light: ITheme = {
     card: {
         background: "#fff",
     },
+    filter: {
+        background: '#FFFFFF',
+        button: '#f1f1f1',
+        text: '#000',
+    },
     
     background: "linear-gradient(167.21deg, rgba(11, 92, 244, 0.2) -25.51%, rgba(74, 139, 237, 0) 54.4%);",
     primary: "#C1E505",
