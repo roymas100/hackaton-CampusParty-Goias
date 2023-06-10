@@ -3,6 +3,7 @@ import { Avatar, Flex, Text, Switch } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 import React from 'react';
 import { ReactSVG } from 'react-svg'
+import { SunIcon, MoonIcon } from '@chakra-ui/icons'
 
 interface MenuItemProps {
     text: string,
@@ -44,7 +45,7 @@ const menuItems: MenuItemProps[] = [{
 }]
 
 const Menu: React.FC = () => {
-  const { theme, setColorMode } = useStyles()
+  const { theme, setColorMode, isDarkMode } = useStyles()
   const { pathname } = useRouter()
 
   return (
@@ -62,7 +63,15 @@ const Menu: React.FC = () => {
         {menuItems.map(item => <MenuItem key={item.text} svg={item.svg} text={item.text} active={item.path === pathname} path={item.path} enabled={item.enabled} />)}
     </Flex>
 
-    <Switch onChange={() => setColorMode(state => state === 'DARK' ? 'LIGHT' : 'DARK')}></Switch>
+    <Switch mt="24px" onChange={() => setColorMode(state => state === 'DARK' ? 'LIGHT' : 'DARK')} paddingLeft="32px" alignItems="center" display="flex" color={theme.filter.text} >{isDarkMode ?  (
+        <Flex  alignItems="center" gap="8px">
+            <MoonIcon />
+            <Text>Modo escuro</Text>
+        </Flex>
+    )  : ( <Flex alignItems="center" gap="8px">
+        <SunIcon />
+        <Text>Modo claro</Text>
+    </Flex>)  }</Switch>
   </Flex>)
 }
 
