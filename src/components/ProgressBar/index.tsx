@@ -8,7 +8,7 @@ interface ProgressBarProps {
     color?: string;
 }
 
-const ProgressBar: React.FC<ProgressBarProps> = ({ label, percent = 10, color}) => {
+const ProgressBar: React.FC<ProgressBarProps> = ({ label, percent , color}) => {
   const { theme } = useStyles()
 
   return <Flex flexDir="column" gap="6px" width="100%">
