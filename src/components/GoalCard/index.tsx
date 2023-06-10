@@ -8,11 +8,11 @@ import { IGoalCard } from '@/interface/goals.interface';
 const GoalCard: React.FC<IGoalCard> = ({ icon, isCompleted, label, points}) => {
     const { theme } = useStyles()
     return (
-        <Card padding="8px 10px" borderRadius={16} bg={theme.card.background} w="220px" >
-    <CardBody alignItems="center" justifyContent="center" display="flex" flexDirection="column">
-            <Flex flex="1 1 80px">
+        <Card padding="8px 10px" borderRadius={16} bg={theme.card.background} flex="1 1 200px" >
+            <CardBody alignItems="center" justifyContent="center" display="flex" flexDirection="column">
+                <Flex flex="1 1 80px">
 
-            <Flex 
+                    <Flex 
             boxShadow='0px 9.39205px 25.0455px rgba(0, 0, 0, 0.1)'
             alignItems="center"
             justifyContent="center"
@@ -34,7 +34,7 @@ const GoalCard: React.FC<IGoalCard> = ({ icon, isCompleted, label, points}) => {
                 <Flex>
                     {isCompleted ? <CheckCircleIcon color={theme.goal.primary} width="24px" height="24px" /> :
             
-                    <Text fontWeight={700} fontSize="16px" color={theme.goal.secundary}>+{points}</Text>
+                    <Text fontWeight={700} fontSize="20px" color={theme.goal.secundary}>+{points}</Text>
                     }
             
                 </Flex>

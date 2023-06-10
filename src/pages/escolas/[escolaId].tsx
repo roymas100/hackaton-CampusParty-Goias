@@ -24,14 +24,14 @@ const Game: React.FC = () => {
 
         <Flex padding="24px" pl="309px" background={theme.background} minH="100vh" w="100%" justifyContent="flex-start" alignItems="flex-start" flexWrap="wrap" gap="16px" >
             
-            <Card maxWidth="400px" width="100%" padding="24px"  bg={theme.card.background}>
+            <Card width="100%" padding="24px"  bg={theme.card.background}>
                 <CardBody display="flex" flexDir="column" gap="48px">
                     <Heading fontSize="24px" color={theme.text.primary}>Escola Estadual Professora Marinete Silva</Heading>
                     <GoalBar value={76} />
                 </CardBody>
             </Card>
 
-            <Flex flexWrap="wrap" gap="16px">
+            <Flex flexWrap="wrap" gap="16px" alignItems="center" >
               {goals.map(({ ...props }) => <GoalCard key={props.label} {...props} /> )} 
             </Flex>
 
