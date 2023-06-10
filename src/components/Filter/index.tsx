@@ -23,7 +23,7 @@ const Filter: React.FC<FilterProps> = ({ selected, schools }) => {
     flex="1 1 80px"
     size="sm"
     borderColor={theme.filter.button}
-    maxW="180px"
+    maxW="380px"
     placeholder='Filtrar por escolas'
     justifySelf="flex-end"
     >

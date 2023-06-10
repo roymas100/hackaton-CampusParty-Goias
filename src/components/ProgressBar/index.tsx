@@ -3,31 +3,43 @@ import { Flex, Progress, Text } from '@chakra-ui/react';
 import React from 'react';
 
 interface ProgressBarProps {
-    label: string;
-    percent: number;
-    color?: string;
+  label: string;
+  percent: number;
+  color?: string;
 }
 
-const ProgressBar: React.FC<ProgressBarProps> = ({ label, percent , color}) => {
+const ProgressBar: React.FC<ProgressBarProps> = ({ label, percent, color }) => {
   const { theme } = useStyles()
 
   return <Flex flexDir="column" gap="6px" width="100%">
-    <Text 
-    fontWeight= "400"
-    fontSize= "14px"
-    lineHeight= "20px"
-    color={theme.text.primary}
-    >{label}</Text>
-    <Progress
+    <Flex flexDir="column" >
+      
+      <Flex w="100%" justifyContent={"space-between"}>
+      <Text
+        fontWeight="400"
+        fontSize="14px"
+        lineHeight="20px"
+        color={theme.text.primary}
+      >{label}</Text>
+      <Text>
+        {percent} menções
+      </Text>
+      </Flex>
+
+      <Progress
         height="8px"
         value={percent}
         borderRadius="4px"
-        w="100%" 
+        w="100%"
         __css={{
-            backgroundColor: "#F2F2F2",
-            "&>div":{backgroundColor: color || theme.primary}
+          backgroundColor: "#F2F2F2",
+          "&>div": { backgroundColor: color || theme.primary }
         }}
-        />
+      />
+
+
+    </Flex>
+
   </Flex>;
 }
 
