@@ -27,7 +27,7 @@ const Filter: React.FC<FilterProps> = ({ selected, schools }) => {
     placeholder='Filtrar por escolas'
     justifySelf="flex-end"
     >
-        {schools.map(school => <option value={school} key={school}>{school}</option> )}
+        {schools.map((school, index) => <option value={school} key={school+index}>{school}</option> )}
     </Select>
   </Flex>;
 }

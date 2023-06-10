@@ -9,7 +9,8 @@ import CircleChartGroup from "@/components/CircleChartGroup";
 import Filter from "@/components/Filter";
 import { useDb } from "@/hook/useDb";
 import { CircleProgressBar } from "@/components/CircleProgressBar";
-import { useState } from "react";
+import { useEffect } from "react";
+import useSound from 'use-sound';
 
 const Map = dynamic(() => import("@/components/Map"), { ssr: false });
 
@@ -37,302 +38,25 @@ const data = [
   
 ];
 
-const schools = [
-  {
-    id: 1,
-    name: "Escola Estadual João de Barro",
-    description: "Uma escola pública localizada em algum lugar de Goiás.",
-    location: "Goiânia",
-    metrics: {
-      darkWeb: {
-        amount: 2,
-        sites: ["siteA1", "siteB1", "siteC1"],
-      },
-      violence: {
-        professorAndStudent: 5,
-        studentAndStudent: 3,
-      },
-      ouvidoria: {
-        amount: 7,
-        manifestacao: [
-          {
-            id: 1,
-            name: "Manifestação 1",
-            type: "Saúde Mental",
-          },
-          {
-            id: 2,
-            name: "Manifestação 2",
-            type: "Violência na Escola",
-          },
-          {
-            id: 3,
-            name: "Manifestação 3",
-            type: "Ameaça",
-          },
-        ],
-      },
-    },
-  },
-  {
-    id: 2,
-    name: "Escola Municipal Dom Bosco",
-    description: "Uma escola pública localizada em algum lugar de Goiás.",
-    location: "Anápolis",
-    metrics: {
-      darkWeb: {
-        amount: 1,
-        sites: ["siteA2", "siteB2"],
-      },
-      violence: {
-        professorAndStudent: 2,
-        studentAndStudent: 4,
-      },
-      ouvidoria: {
-        amount: 3,
-        manifestacao: [
-          {
-            id: 1,
-            name: "Manifestação 1",
-            type: "Saúde Mental",
-          },
-          {
-            id: 2,
-            name: "Manifestação 2",
-            type: "Violência na Escola",
-          },
-        ],
-      },
-    },
-  },
-  {
-    id: 3,
-    name: "Escola Estadual Maria Clara Machado",
-    description: "Uma escola pública localizada em algum lugar de Goiás.",
-    location: "Catalão",
-    metrics: {
-      darkWeb: {
-        amount: 0,
-        sites: [],
-      },
-      violence: {
-        professorAndStudent: 0,
-        studentAndStudent: 1,
-      },
-      ouvidoria: {
-        amount: 2,
-        manifestacao: [
-          {
-            id: 1,
-            name: "Manifestação 1",
-            type: "Saúde Mental",
-          },
-        ],
-      },
-    },
-  },
-  {
-    id: 4,
-    name: "Escola Municipal Antônio Rodrigues",
-    description: "Uma escola pública localizada em algum lugar de Goiás.",
-    location: "Goiânia",
-    metrics: {
-      darkWeb: {
-        amount: 3,
-        sites: ["siteA4"],
-      },
-      violence: {
-        professorAndStudent: 6,
-        studentAndStudent: 9,
-      },
-      ouvidoria: {
-        amount: 5,
-        manifestacao: [
-          {
-            id: 1,
-            name: "Manifestação 1",
-            type: "Ameaça",
-          },
-          {
-            id: 2,
-            name: "Manifestação 2",
-            type: "Violência na Escola",
-          },
-        ],
-      },
-    },
-  },
-  {
-    id: 5,
-    name: "Escola Estadual Rui Barbosa",
-    description: "Uma escola pública localizada em algum lugar de Goiás.",
-    location: "Aparecida de Goiânia",
-    metrics: {
-      darkWeb: {
-        amount: 4,
-        sites: ["siteA5", "siteB5", "siteC5", "siteD5"],
-      },
-      violence: {
-        professorAndStudent: 2,
-        studentAndStudent: 7,
-      },
-      ouvidoria: {
-        amount: 1,
-        manifestacao: [
-          {
-            id: 1,
-            name: "Manifestação 1",
-            type: "Violência na Escola",
-          },
-        ],
-      },
-    },
-  },
-  {
-    id: 6,
-    name: "Escola Municipal Carlos Drummond de Andrade",
-    description: "Uma escola pública localizada em algum lugar de Goiás.",
-    location: "Goiânia",
-    metrics: {
-      darkWeb: {
-        amount: 0,
-        sites: [],
-      },
-      violence: {
-        professorAndStudent: 1,
-        studentAndStudent: 0,
-      },
-      ouvidoria: {
-        amount: 6,
-        manifestacao: [
-          {
-            id: 1,
-            name: "Manifestação 1",
-            type: "Ameaça",
-          },
-          {
-            id: 2,
-            name: "Manifestação 2",
-            type: "Violência na Escola",
-          },
-        ],
-      },
-    },
-  },
-  {
-    id: 7,
-    name: "Escola Estadual Santos Dumont",
-    description: "Uma escola pública localizada em algum lugar de Goiás.",
-    location: "Goiânia",
-    metrics: {
-      darkWeb: {
-        amount: 1,
-        sites: ["siteA7"],
-      },
-      violence: {
-        professorAndStudent: 4,
-        studentAndStudent: 5,
-      },
-      ouvidoria: {
-        amount: 0,
-        manifestacao: [],
-      },
-    },
-  },
-  {
-    id: 8,
-    name: "Escola Municipal Monteiro Lobato",
-    description: "Uma escola pública localizada em algum lugar de Goiás.",
-    location: "Goiânia",
-    metrics: {
-      darkWeb: {
-        amount: 2,
-        sites: ["siteA8", "siteB8"],
-      },
-      violence: {
-        professorAndStudent: 3,
-        studentAndStudent: 6,
-      },
-      ouvidoria: {
-        amount: 1,
-        manifestacao: [
-          {
-            id: 1,
-            name: "Manifestação 1",
-            type: "Saúde Mental",
-          },
-        ],
-      },
-    },
-  },
-  {
-    id: 9,
-    name: "Escola Estadual Castro Alves",
-    description: "Uma escola pública localizada em algum lugar de Goiás.",
-    location: "Goiânia",
-    metrics: {
-      darkWeb: {
-        amount: 0,
-        sites: [],
-      },
-      violence: {
-        professorAndStudent: 0,
-        studentAndStudent: 0,
-      },
-      ouvidoria: {
-        amount: 2,
-        manifestacao: [
-          {
-            id: 1,
-            name: "Manifestação 1",
-            type: "Saúde Mental",
-          },
-        ],
-      },
-    },
-  },
-  {
-    id: 10,
-    name: "Escola Municipal Raimundo Nonato",
-    description: "Uma escola pública localizada em algum lugar de Goiás.",
-    location: "Goiânia",
-    metrics: {
-      darkWeb: {
-        amount: 3,
-        sites: ["siteA10", "siteB10"],
-      },
-      violence: {
-        professorAndStudent: 1,
-        studentAndStudent: 2,
-      },
-      ouvidoria: {
-        amount: 2,
-        manifestacao: [
-          {
-            id: 1,
-            name: "Manifestação 1",
-            type: "Saúde Mental",
-          },
-          {
-            id: 2,
-            name: "Manifestação 2",
-            type: "Violência na Escola",
-          },
-        ],
-      },
-    },
-  },
-];
 
 export default function Home() {
   const { theme } = useStyles();
   const { schoolList } = useDb();
-  useState(()=>{
-    setTimeout(()=>{
-      onOpen()
-    },3000)
-  })
   const { isOpen, onOpen, onClose } = useDisclosure()
+
+  useEffect(()=>{
+    if (onOpen) {
+      setTimeout(()=>{
+        onOpen()
+      },3000)
+    }
+  }, [])
+
+
+
+  function closeModal (){
+    onClose()
+  }
 
   return (
 
@@ -344,18 +68,29 @@ export default function Home() {
         <link rel="icon" href="./avatar.svg" />
       </Head>
       
-      <Modal onClose={onClose} size={"xl"} isOpen={isOpen}>
+      <Modal onClose={closeModal} size={"xl"} isOpen={isOpen}>
         <ModalOverlay />
-        <ModalContent>
-          <ModalHeader>ALERTA DE EMERGENCIA!!!</ModalHeader>
+        <ModalContent backgroundColor="#ab2e47">
+          <ModalHeader color="white">Alerta de Emergência!</ModalHeader>
           <ModalCloseButton />
-          <ModalBody>
-            <Text fontSize={"4xl"}>
-              Possivel atentado na Escola Estadual Imperatriz Leopodina
+          <ModalBody display="flex" flexDir="column" gap="24px">
+            <Text color="white" fontSize="24px" fontWeight={600}>
+               Possivel atentado
             </Text>
-            <Text>
+<Flex gap="16px">
+<Text color="white" fontSize="18px" fontWeight={500}>
+              Localização:
+            </Text>
+            <Flex flexDir="column">
+            <Text color="white" fontSize="18px" fontWeight={500}>
+              Escola Estadual Imperatriz Leopodina
+            </Text>
+            <Text color="white"fontSize="14px"  fontWeight={400}>
               Rua das Rosas 242 - Goiania
             </Text>
+</Flex>
+            
+            </Flex>
           </ModalBody>
           <ModalFooter>
             <Button onClick={onClose}>Close</Button>
