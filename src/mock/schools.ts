@@ -1,9 +1,19 @@
-export const schools2  = [
+import { ISchool } from "@/interface/school.interface";
+
+export const schools2: ISchool[]  = [
     {
       "id": 1,
       "name": "Escola Estadual João de Barro",
       "description": "Uma escola pública localizada em algum lugar de Goiás.",
       "location": "Goiânia",
+      progress: 80,
+      goals: {
+        monitoria: false,
+        acompanhamento: false,
+        qrcode: false,
+        controleDeAcesso: false,
+        treinamento: false
+    },
       "metrics": {
         "darkWeb": {
           "amount": 2,
@@ -40,6 +50,14 @@ export const schools2  = [
       "name": "Escola Municipal Dom Bosco",
       "description": "Uma escola pública localizada em algum lugar de Goiás.",
       "location": "Anápolis",
+      progress: 100,
+       goals: {
+        monitoria: false,
+        acompanhamento: false,
+        qrcode: false,
+        controleDeAcesso: false,
+        treinamento: false
+    },
       "metrics": {
         "darkWeb": {
           "amount": 1,
@@ -71,6 +89,14 @@ export const schools2  = [
       "name": "Escola Estadual Maria Clara Machado",
       "description": "Uma escola pública localizada em algum lugar de Goiás.",
       "location": "Catalão",
+      progress: 80,
+       goals: {
+        monitoria: false,
+        acompanhamento: false,
+        qrcode: false,
+        controleDeAcesso: false,
+        treinamento: false
+    },
       "metrics": {
         "darkWeb": {
           "amount": 0,
@@ -97,6 +123,14 @@ export const schools2  = [
       "name": "Escola Municipal Antônio Rodrigues",
       "description": "Uma escola pública localizada em algum lugar de Goiás.",
       "location": "Goiânia",
+      progress: 80,
+       goals: {
+        monitoria: false,
+        acompanhamento: false,
+        qrcode: false,
+        controleDeAcesso: false,
+        treinamento: false
+    },
       "metrics": {
         "darkWeb": {
           "amount": 3,
@@ -128,6 +162,14 @@ export const schools2  = [
       "name": "Escola Estadual Rui Barbosa",
       "description": "Uma escola pública localizada em algum lugar de Goiás.",
       "location": "Aparecida de Goiânia",
+      progress: 80,
+       goals: {
+        monitoria: false,
+        acompanhamento: false,
+        qrcode: false,
+        controleDeAcesso: false,
+        treinamento: false
+    },
       "metrics": {
         "darkWeb": {
           "amount": 4,
@@ -154,6 +196,14 @@ export const schools2  = [
       "name": "Escola Municipal Carlos Drummond de Andrade",
       "description": "Uma escola pública localizada em algum lugar de Goiás.",
       "location": "Goiânia",
+      progress: 80,
+       goals: {
+        monitoria: false,
+        acompanhamento: false,
+        qrcode: false,
+        controleDeAcesso: false,
+        treinamento: false
+    },
       "metrics": {
         "darkWeb": {
           "amount": 0,
@@ -185,6 +235,14 @@ export const schools2  = [
       "name": "Escola Estadual Santos Dumont",
       "description": "Uma escola pública localizada em algum lugar de Goiás.",
       "location": "Goiânia",
+      progress: 80,
+       goals: {
+        monitoria: false,
+        acompanhamento: false,
+        qrcode: false,
+        controleDeAcesso: false,
+        treinamento: false
+    },
       "metrics": {
         "darkWeb": {
           "amount": 1,
@@ -205,6 +263,14 @@ export const schools2  = [
       "name": "Escola Municipal Monteiro Lobato",
       "description": "Uma escola pública localizada em algum lugar de Goiás.",
       "location": "Goiânia",
+      progress: 80,
+       goals: {
+        monitoria: false,
+        acompanhamento: false,
+        qrcode: false,
+        controleDeAcesso: false,
+        treinamento: false
+    },
       "metrics": {
         "darkWeb": {
           "amount": 2,
@@ -231,6 +297,14 @@ export const schools2  = [
       "name": "Escola Estadual Castro Alves",
       "description": "Uma escola pública localizada em algum lugar de Goiás.",
       "location": "Goiânia",
+      progress: 80,
+       goals: {
+        monitoria: false,
+        acompanhamento: false,
+        qrcode: false,
+        controleDeAcesso: false,
+        treinamento: false
+    },
       "metrics": {
         "darkWeb": {
           "amount": 0,
@@ -257,6 +331,14 @@ export const schools2  = [
       "name": "Escola Municipal Raimundo Nonato",
       "description": "Uma escola pública localizada em algum lugar de Goiás.",
       "location": "Goiânia",
+      progress: 80,
+       goals: {
+        monitoria: false,
+        acompanhamento: false,
+        qrcode: false,
+        controleDeAcesso: false,
+        treinamento: false
+    },
       "metrics": {
         "darkWeb": {
           "amount": 3,

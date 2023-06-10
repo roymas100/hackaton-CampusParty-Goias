@@ -8,12 +8,14 @@ import SchoolCard from '@/components/SchoolCard';
 import { useRouter } from 'next/router';
 
 import { AddIcon } from '@chakra-ui/icons'
+import { useDb } from '@/hook/useDb';
 
 // import { Container } from './styles';
 
 const Escolas: React.FC = () => {
     const { theme } = useStyles();
     const { push } = useRouter();
+    const { schoolList } = useDb()
 
   return <>
    <Head>
@@ -36,13 +38,11 @@ const Escolas: React.FC = () => {
             </Flex>
 
             <Flex flexWrap="wrap" gap="16px">
-                <SchoolCard name='Ensino em Período Integral Iris Rezende Machado' progress={10} onClick={() => push('/escolas/1')} />
-                <SchoolCard name='Ensino em Período Integral Iris Rezende Machado' progress={100}  />
-                <SchoolCard name='Ensino em Período Integral Iris Rezende Machado'  progress={10} />
-                <SchoolCard name='Ensino em Período Integral Iris Rezende Machado'  progress={10} />
-                <SchoolCard name='Ensino em Período Integral Iris Rezende Machado' progress={10}  />
-                <SchoolCard name='Ensino em Período Integral Iris Rezende Machado' progress={10}  />
-                <SchoolCard name='Ensino em Período Integral Iris Rezende Machado'  progress={10} />
+{schoolList.map(school => 
+    
+    <SchoolCard key={school.id} name={school.name} progress={school.progress} onClick={() => push(`/escolas/${school.id}`)} />
+    )}
+                
             </Flex>
         </Flex>
 

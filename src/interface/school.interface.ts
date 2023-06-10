@@ -3,6 +3,14 @@ export interface ISchool {
     name : string,
     description : string
     location : string
+    progress: number
+    goals: {
+        monitoria: boolean
+        acompanhamento: boolean
+        qrcode: boolean
+        controleDeAcesso: boolean
+        treinamento: boolean
+    },
     metrics : {
         darkWeb : {
             amount : number

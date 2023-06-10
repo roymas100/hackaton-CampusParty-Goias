@@ -21,7 +21,9 @@ const ProgressBar: React.FC<ProgressBarProps> = ({ label, percent, color }) => {
         lineHeight="20px"
         color={theme.text.primary}
       >{label}</Text>
-      <Text>
+      <Text
+        color={theme.text.primary}
+        >
         {percent} menções
       </Text>
       </Flex>

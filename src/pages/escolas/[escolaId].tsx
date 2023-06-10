@@ -2,10 +2,12 @@ import GoalBar from '@/components/GoalBar';
 import GoalCard from '@/components/GoalCard';
 import Menu from '@/components/Menu';
 import { useStyles } from '@/context/StylesContext';
+import { useDb } from '@/hook/useDb';
 import { goals } from '@/mock/goals';
 import { Flex, CardBody, Card, Heading } from '@chakra-ui/react';
 import Head from 'next/head';
-import React from 'react';
+import { useRouter } from 'next/router';
+import React, { useEffect, useMemo, useState } from 'react';
 
 
 const Game: React.FC = () => {

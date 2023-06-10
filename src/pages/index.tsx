@@ -348,7 +348,6 @@ export default function Home() {
           alignItems="flex-start"
           flexWrap="wrap"
           gap="16px"
-          height={"130vh"}
           minH="100vh"
         >
           <Filter schools={schoolList.map(item => item.name)} selected={schoolList.map(item => item.name)} />
@@ -374,8 +373,11 @@ export default function Home() {
             </Flex>
           </Card>
 
-          <Flex w="100%" height="448px">
+          <Flex w="100%" minHeight="550px">
+            <Flex w="100%" height="550px">
+
             <Map />
+            </Flex>
 
             <Card
               title="Escolas Monitoras pelo Programa Escola Segura"
