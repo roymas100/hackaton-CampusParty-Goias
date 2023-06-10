@@ -15,6 +15,12 @@ export interface ITheme {
         background: string,
         text: string,
         button: string
+    },
+    goal: {
+        primary: string,
+        secundary: string,
+        backgroundIcon: string,
+        icon: string;
     }
 }
 

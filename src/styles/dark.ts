@@ -17,6 +17,12 @@ const dark: ITheme = {
     primary: "#C1E505",
     text: {
         primary: "#FFFFFF"
+    },
+    goal: {
+        primary: '#1A66F5',
+        secundary: '#404040',
+        backgroundIcon: '#252525',
+        icon: "#fff"
     }
 }
 

@@ -18,6 +18,13 @@ const light: ITheme = {
     primary: "#C1E505",
     text: {
         primary: "#000"
+    },
+    goal: {
+        primary: '#1A66F5',
+        secundary: '#404040',
+        backgroundIcon: '#fff',
+        icon: "#1A66F5"
+
     }
 }
 

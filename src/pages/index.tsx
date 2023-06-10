@@ -5,7 +5,6 @@ import dynamic from 'next/dynamic'
 import Card from '@/components/Card';
 import ProgressBar from '@/components/ProgressBar';
 import { useStyles } from '@/context/StylesContext';
-import { CircleProgressBar, CircleProgressBarContainer } from '@/components/CircleProgressBar';
 import CircleChartGroup from '@/components/CircleChartGroup';
 import Filter from '@/components/Filter';
 import { useDb } from '@/hook/useDb';
